@@ -14,7 +14,7 @@ function App() {
 
   // Reply to any message with "Hi there!".
 bot.on("message", (ctx) => ctx.reply("Hi there!"));
-bot.command("start" , "Welcome to the Test MiniApp, a mini app to test features");
+bot.command("start" ,(ctx) => ctx.reply("Welcome to the Test MiniApp, a mini app to test features"));
 
 bot.start();
 //const button =  WebApp.InlineKeyboardButton.text("Inline button");
