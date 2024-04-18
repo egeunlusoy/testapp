@@ -8,13 +8,15 @@ WebApp.ready();
 
 const bot = new Bot("6948802463:AAGsGKxqyB_JECw7nciuEQHCgOBA_KE7ob4"); 
 
-// Reply to any message with "Hi there!".
+
+
+function App() {
+
+  // Reply to any message with "Hi there!".
 bot.on("message", (ctx) => ctx.reply("Hi there!"));
 bot.command("start" , "Welcome to the Test MiniApp, a mini app to test features");
 
 bot.start();
-
-function App() {
 //const button =  WebApp.InlineKeyboardButton.text("Inline button");
  // WebApp.enableClosingConfirmation();
  // { button }
