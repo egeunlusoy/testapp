@@ -13,7 +13,8 @@ const bot = new Bot("6948802463:AAGsGKxqyB_JECw7nciuEQHCgOBA_KE7ob4");
 function App() {
 
   // Reply to any message with "Hi there!".
-bot.on("message", (ctx) => ctx.reply("Hi there!"));
+//bot.on("message", (ctx) => ctx.reply("Hi there!"));
+
 bot.command("start" ,(ctx) => ctx.reply("Welcome to the Test MiniApp, a mini app to test features"));
 
 bot.start();
