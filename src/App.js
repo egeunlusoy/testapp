@@ -1,26 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
 //import WebApp from '@twa-dev/sdk'
-const { Bot } = require("grammy");
+const { Bot, InlineKeyboard } = require("grammy");
 
 let WebApp = window.Telegram.WebApp;
 WebApp.ready();
 
-const bot = new Bot("6948802463:AAGsGKxqyB_JECw7nciuEQHCgOBA_KE7ob4"); 
+const bot = new Bot("6948802463:AAGsGKxqyB_JECw7nciuEQHCgOBA_KE7ob4");
 
-
+/** RUN " npm run deploy " to publish to gh-pages  **/ 
 
 function App() {
 
-  // Reply to any message with "Hi there!".
-//bot.on("message", (ctx) => ctx.reply("Hi there!"));
+bot.command("start" ,(ctx) => 
+{
+  ctx.reply("Welcome to the Test MiniApp, a mini app to test features" , 
+  {
+    reply_markup: new InlineKeyboard()
+                .text("Inline button 1","first")
+                .text("Inline Button 2").row()
+                .text("Inline Button 3")
+                .text("Inline Button 4")
 
-bot.command("start" ,(ctx) => ctx.reply("Welcome to the Test MiniApp, a mini app to test features"));
+    })
+
+});
+/*
+feature.command("start", logHandle("command-start"), (ctx) => {
+  return ctx.reply(ctx.t("welcome"), {
+    reply_markup: new InlineKeyboard().webApp(
+      ctx.t("open-app"),
+      config.WEB_APP_URL,
+    ),
+    link_preview_options: {
+      is_disabled: true,
+    },
+  });
+});*/
 
 bot.start();
-//const button =  WebApp.InlineKeyboardButton.text("Inline button");
+
  // WebApp.enableClosingConfirmation();
- // { button }
+
   
   return (
     <div className="App">
