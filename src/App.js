@@ -8,7 +8,7 @@ const { Bot, InlineKeyboard } = require("grammy");
 let WebApp = window.Telegram.WebApp;
 WebApp.ready();
 
-//const bot = new Bot("6948802463:AAGsGKxqyB_JECw7nciuEQHCgOBA_KE7ob4");
+
 
 /** RUN " npm run deploy " to publish to gh-pages  **/ 
 
