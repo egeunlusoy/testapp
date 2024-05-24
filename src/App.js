@@ -13,21 +13,28 @@ WebApp.ready();
 /** RUN " npm run deploy " to publish to gh-pages  **/ 
 
 function App() {
+
+  const bot = new Bot(process.env.REACT_APP_BOT_TOKEN);
+   
+  bot.start();
+
+    bot.command("start" ,(ctx) => 
+    {
+      ctx.reply("Welcome to the Test MiniApp, a mini app to test featuress" , 
+      {
+        reply_markup: new InlineKeyboard()
+                    .text("Search Jobs","searchJobs")
+                    .text("My Jobs","myJobs").row()
+                    .text("My Profile","profile")
+                    .text("Inline Button 4")
+    
+        })
+    
+    });
+
+   
+
 /*
-bot.command("start" ,(ctx) => 
-{
-  ctx.reply("Welcome to the Test MiniApp, a mini app to test features" , 
-  {
-    reply_markup: new InlineKeyboard()
-                .text("My Profile","profile")
-                .text("Inline Button 2").row()
-                .text("Inline Button 3")
-                .text("Inline Button 4")
-
-    })
-
-});
-
 bot.callbackQuery("profile", async (ctx) => {
   await ctx.answerCallbackQuery({
     
@@ -67,12 +74,13 @@ feature.command("start", logHandle("command-start"), (ctx) => {
     </div>
   );*/
 
+//<Route path="/" element={<Home />} >
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} >
+         
           <Route path="/profile" element={<Profile />} />    
-        </Route>
+        
       </Routes>
     </BrowserRouter>
   );
